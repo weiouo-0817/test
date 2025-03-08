@@ -1,18 +1,18 @@
 
-def Towers(n, fr, to, spare , count1):
-   
+
+def Towers(n, fr, to, spare, count):
+    def printMove(fr, to):
+        print('move from ' + str(fr) + ' to ' + str(to))
+
     if n == 1:
         printMove(fr, to)
-        count1 += 1
-        
+        count+=1
     else:
-        Towers(n-1, fr, spare, to, count1)
-        Towers(1, fr, to, spare, count1)
-        Towers(n-1, spare, to, fr, count1)
-    return count1
-        
+        count = Towers(n-1, fr, spare, to, count)
+        count = Towers(1, fr, to, spare, count)
+        count = Towers(n-1, spare, to, fr, count)
     
-def printMove(fr, to):
-    print('move from ' + str(fr) + ' to ' + str(to))
-    
-print( Towers(3, 'A', 'B', 'C',0) )
+    return count
+
+print(Towers(10,'A','B','C', 0))
+
