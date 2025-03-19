@@ -1,5 +1,3 @@
-
-
 def Towers(n, fr, to, spare, count):
     def printMove(fr, to):
         print('move from ' + str(fr) + ' to ' + str(to))
